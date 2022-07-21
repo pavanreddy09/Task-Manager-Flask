@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Task Manager</title>
+{% endblock %}
+
+{% block body %}
+<div class="main">
+    <div class="input-div">
+        <h1>TASK MANAGER</h1>
+        <form action="/" method="POST">
+        <input type="text" name="content" placeholder="Enter the Task...">
+        <button>ADD</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}  
+                {% for message in messages %}  
+                    <h2>{{ message }}</h2>  
+                {% endfor %}  
+            {% endif %}  
+        {% endwith %}  
+    </div>
+    <div class="table-div">
+        {% if tasks|length < 1 %}
+           <h3>There are no tasks create one above!</h3>
+        {% else %}
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Created At</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            {% for task in tasks %}
+            <tr>
+                <td>{{task.content}}</td>
+                <td>{{task.created_date.date()}}</td>
+                <td><a href="/update/{{task.id}}" class="update">Update</a></td>
+                <td><a href="/delete/{{task.id}}" class="delete">Delete</a></td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+</div>
+{% endblock %} 
+
+

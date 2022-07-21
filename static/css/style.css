@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-div, .table-div {
+    width: 50%;
+}
+
+.input-div {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+input {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    width: 80px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 20px;
+
+}
+
+table th, table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+}
+
+.update{
+   color: blue;
+}
+
+.delete {
+   color: red;
+}

@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+<title>Update Task</title>
+{% endblock %}
+
+{% block body %}
+<div class="main">
+    <div class="input-div">
+        <h1>UPDATE TASK</h1>
+        <form action="/update/{{task.id}}" method="POST">
+        <input type="text" name="content" value="{{task.content}}">
+        <button>Update</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}  
+                {% for message in messages %}  
+                    <h2>{{ message }}</h2>  
+                {% endfor %}  
+            {% endif %}  
+        {% endwith %}  
+    </div>
+</div>
+{% endblock %} 
+
+
